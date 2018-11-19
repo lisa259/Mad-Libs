@@ -1,65 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="223dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/madlibs"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="16dp" />
+        android:layout_gravity="center"
+        android:layout_marginStart="81dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="13dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/madlibs" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="342dp"
-        android:layout_height="95dp"
-        android:text="Welcome to Mad Libs! I will ask you to fill in words to complete the story.  You won't be able to see the whole story until you are done filling in all the missing words. That's part of the fun. Click on one of the story's below te get started ..."
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="229dp" />
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="12dp"
+        android:layout_weight="1"
+        android:text="Welcome to Mad Libs! I will ask you to fill in words to complete the story. You won't be able to see the whole story until you are done filling in all the missing words. Choose one of the story's below and click the button to get started."
+        app:layout_constraintBottom_toTopOf="@+id/university"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Spinner
+        android:id="@+id/text_spinner"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:entries="@array/stories"
+        android:gravity="center" />
 
     <Button
-        android:id="@+id/simple"
-        android:layout_width="wrap_content"
+        android:id="@+id/get_started"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:text="Simple"
-        tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="337dp" />
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Get started!" />
 
-    <Button
-        android:id="@+id/clothes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clothes"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="403dp" />
-
-    <Button
-        android:id="@+id/tarzan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tarzan"
-        tools:layout_editor_absoluteX="148dp"
-        tools:layout_editor_absoluteY="337dp" />
-
-    <Button
-        android:id="@+id/dance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dance"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="403dp" />
-
-    <Button
-        android:id="@+id/university"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Univeristy"
-        tools:layout_editor_absoluteX="264dp"
-        tools:layout_editor_absoluteY="336dp" />
-
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

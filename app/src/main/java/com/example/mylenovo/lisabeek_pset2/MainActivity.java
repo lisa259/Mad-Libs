@@ -2,16 +2,25 @@ package com.example.mylenovo.lisabeek_pset2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class MainActivity extends AppCompatActivity {
+
+//    Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         try {
             InputStream is = getAssets().open("madlib0_simple.txt");
         } catch (IOException e) {
@@ -19,3 +28,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
