@@ -49,7 +49,7 @@ public class Story implements Serializable {
         filledIn = 0;
     }
 
-    /** replaces the next unfilled placeholder with the given word */
+    /** replaces the next unfilled placeholder with the given word  (in text)*/
     public void fillInPlaceholder(String word) {
         if (!isFilledIn()) {
             text = text.replace("<" + filledIn + ">", word);
