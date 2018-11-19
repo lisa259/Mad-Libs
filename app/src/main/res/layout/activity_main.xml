@@ -6,13 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="223dp"
+        android:layout_height="200dp"
+        app:srcCompat="@drawable/madlibs"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="16dp" />
+
     <TextView
+        android:id="@+id/textView"
+        android:layout_width="342dp"
+        android:layout_height="95dp"
+        android:text="Welcome to Mad Libs! I will ask you to fill in words to complete the story.  You won't be able to see the whole story until you are done filling in all the missing words. That's part of the fun. Click on one of the story's below te get started ..."
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="229dp" />
+
+    <Button
+        android:id="@+id/simple"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Simple"
+        tools:layout_editor_absoluteX="21dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <Button
+        android:id="@+id/clothes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clothes"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="403dp" />
+
+    <Button
+        android:id="@+id/tarzan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tarzan"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="337dp" />
+
+    <Button
+        android:id="@+id/dance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dance"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="403dp" />
+
+    <Button
+        android:id="@+id/university"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Univeristy"
+        tools:layout_editor_absoluteX="264dp"
+        tools:layout_editor_absoluteY="336dp" />
 
 </android.support.constraint.ConstraintLayout>
