@@ -3,21 +3,15 @@ package com.example.mylenovo.lisabeek_pset2;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class MainActivity extends AppCompatActivity {
 
-//    Spinner spinner;
+    public Story story;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    // When button "get started" clicked
     public void buttonClicked(View view) {
+        // Get selected item from spinner
         Spinner spinner = (Spinner)findViewById(R.id.text_spinner);
-        String story = spinner.getSelectedItem().toString();
+        String story_name = spinner.getSelectedItem().toString();
         String text = "";
-        switch (story){
+
+        // Check with story was chosen and safe the name of corresponding text file as string
+        switch (story_name){
             case "Simple":      text = "madlib0_simple.txt";
                                 break;
             case "Tarzan":      text = "madlib1_tarzan.txt";
@@ -44,15 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+        try {
+            // Open text file and create new Story object
+            InputStream inputText = getAssets().open(text);
+            story = new Story(inputText);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        // Change to WordsActivity class, and pass the created Story object
         Intent intent = new Intent(MainActivity.this, WordsActivity.class);
-        intent.putExtra("story", text);
+        intent.putExtra("story", story);
         startActivity(intent);
-
-
-
-
-
     }
-
 }
 
